@@ -40,9 +40,20 @@ class _HomePageState extends State<HomePage> {
         ),
         Positioned(
             top: 130,
-            child: IconContainer(
-              size: size.width * 0.15,
-            )),
+            child: Column(
+              children: [
+                IconContainer(
+                  size: size.width * 0.15,
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                const Text("Hola Mundo\nCod3 Girl",
+                  textAlign: TextAlign.center,
+                )
+              ],
+            )
+        ),
       ]),
     ));
   }
