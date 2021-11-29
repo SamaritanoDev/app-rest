@@ -29,42 +29,44 @@ class _HomePageState extends State<HomePage> {
       onTap: () {
         FocusScope.of(context).unfocus();
       },
-      child: Container(
-        width: doubleinfinity,
-        height: doubleinfinity,
-        color: Colors.white,
-        child: Stack(alignment: Alignment.center, children: [
-          Positioned(
-            top: -moradosize * 0.4,
-            right: -moradosize * 0.2,
-            child: Circle(size: moradosize, colors: [morado, lila]),
-          ),
-          Positioned(
-            top: -celestesize * 0.55,
-            left: -celestesize * 0.15,
-            child: Circle(size: celestesize, colors: [turquesa, celeste]),
-          ),
-          Positioned(
-              top: 130,
-              child: Column(
-                children: [
-                  IconContainer(
-                    size: responsive.obtenerAncho(17),
-                  ),
-                  SizedBox(
-                    height: responsive.obtenerDiagonal(3),
-                  ),
-                  Text(
-                    "Hola Mundo\nCod3 Girl",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: responsive.obtenerDiagonal(1.6),
+      child: SingleChildScrollView(
+        child: Container(
+          width: doubleinfinity,
+          height: responsive.height,
+          color: Colors.white,
+          child: Stack(alignment: Alignment.center, children: [
+            Positioned(
+              top: -moradosize * 0.4,
+              right: -moradosize * 0.2,
+              child: Circle(size: moradosize, colors: [morado, lila]),
+            ),
+            Positioned(
+              top: -celestesize * 0.55,
+              left: -celestesize * 0.15,
+              child: Circle(size: celestesize, colors: [turquesa, celeste]),
+            ),
+            Positioned(
+                top: 130,
+                child: Column(
+                  children: [
+                    IconContainer(
+                      size: responsive.obtenerAncho(17),
                     ),
-                  )
-                ],
-              )),
-          const LoginForm(),
-        ]),
+                    SizedBox(
+                      height: responsive.obtenerDiagonal(3),
+                    ),
+                    Text(
+                      "Hola Mundo\nCod3 Girl",
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: responsive.obtenerDiagonal(1.6),
+                      ),
+                    )
+                  ],
+                )),
+            const LoginForm(),
+          ]),
+        ),
       ),
     ));
   }
